@@ -12,7 +12,16 @@ window.addEventListener("load", () => {
 
     /* ---------------------- yazdiklarimizi task a atariz ---------------------- */
 
+    
+
     const task = input.value;
+
+    if (task.trim() === "") {
+      alert("Please enter a task!");
+      return;
+    }
+
+   
 
     /* -------------------- altta olusacak task kutusunu ayarliyoruz -------------------- */
 
