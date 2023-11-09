@@ -2,17 +2,10 @@ window.addEventListener("load", () => {
   const form = document.querySelector("#new-task-form");
   const input = document.querySelector("#new-task-input");
   const list_el = document.querySelector("#tasks");
-
-  /* ------------------------ butun forma event veririz ----------------------- */
+  const sectionEl = document.querySelector(".task-list");
 
   form.addEventListener("submit", (e) => {
-    // add yapinca sayfa yenide yuklenir ve ekledigimiz task kaybolur bunu onlemek icin
-
     e.preventDefault();
-
-    /* ---------------------- yazdiklarimizi task a atariz ---------------------- */
-
-    
 
     const task = input.value;
 
@@ -21,23 +14,18 @@ window.addEventListener("load", () => {
       return;
     }
 
-   
-
-    /* -------------------- altta olusacak task kutusunu ayarliyoruz -------------------- */
-
     const task_el = document.createElement("div");
     task_el.classList.add("task");
 
-    /* -------------- altta olusacak kutunun iceriginin oturacagi divi ayarliyoruz -------------- */
+    const checkboxEl = document.createElement("i");
+    checkboxEl.classList.add("fa", "fa-square");
+
+    task_el.appendChild(checkboxEl);
 
     const task_content_el = document.createElement("div");
     task_content_el.classList.add("content");
 
-    /* -------------------- icerigi kutunun icine oturtuyoruz ------------------- */
-
     task_el.appendChild(task_content_el);
-
-    /* ----------------------- input kismini olusturuyoruz ---------------------- */
 
     const task_input_el = document.createElement("input");
     task_input_el.classList.add("text");
@@ -46,8 +34,6 @@ window.addEventListener("load", () => {
     task_input_el.setAttribute("readonly", "readonly");
 
     task_content_el.appendChild(task_input_el);
-
-    /* ---------------- buttonlarin oturacagi divi olusturuyoruz ---------------- */
 
     const task_actions_el = document.createElement("div");
     task_actions_el.classList.add("actions");
@@ -67,8 +53,6 @@ window.addEventListener("load", () => {
 
     list_el.appendChild(task_el);
 
-    /* ------------ task girildikten sonra yukaridaki cubugu sifirla ------------ */
-
     input.value = "";
 
     task_edit_el.addEventListener("click", (e) => {
@@ -84,6 +68,29 @@ window.addEventListener("load", () => {
 
     task_delete_el.addEventListener("click", (e) => {
       list_el.removeChild(task_el);
+    });
+
+    checkboxEl.addEventListener("click", function () {
+      if (checkboxEl.classList.contains("fa-square")) {
+        checkboxEl.classList.remove("fa-square");
+        checkboxEl.classList.add("fa-square-check");
+   /*      const newh2 = document.createElement("h2");
+        newh2.textContent = "Completed";
+        sectionEl.appendChild(newh2);
+        const completed = document.createElement("div");
+        completed.classList.add("completed");
+        sectionEl.appendChild(completed);
+        completed.appendChild(checkboxEl);
+        completed.appendChild(task_content_el);
+        completed.appendChild(task_input_el);
+        completed.appendChild(task_actions_el);
+        completed.appendChild(task_edit_el);
+        completed.appendChild(task_delete_el);  */
+      } else {
+        checkboxEl.classList.remove("fa-square-check");
+        checkboxEl.classList.add("fa-square");
+
+      }
     });
   });
 });
