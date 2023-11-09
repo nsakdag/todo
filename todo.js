@@ -75,24 +75,24 @@ window.addEventListener("load", () => {
         checkboxEl.classList.remove("fa-square");
         checkboxEl.classList.add("fa-square-check");
         task_input_el.style.textDecoration = "line-through";
-        task_input_el.style.color = "crimson"
-   /*      const newh2 = document.createElement("h2");
-        newh2.textContent = "Completed";
-        sectionEl.appendChild(newh2);
-        const completed = document.createElement("div");
-        completed.classList.add("completed");
-        sectionEl.appendChild(completed);
-        completed.appendChild(checkboxEl);
-        completed.appendChild(task_content_el);
-        completed.appendChild(task_input_el);
-        completed.appendChild(task_actions_el);
-        completed.appendChild(task_edit_el);
-        completed.appendChild(task_delete_el);  */
+        
+        // const newh2 = document.createElement("h2");
+        // newh2.textContent = "Completed";
+        // sectionEl.appendChild(newh2);
+        // const completed = document.createElement("div");
+        // completed.classList.add("completed");
+        // sectionEl.appendChild(completed);
+        // completed.appendChild(checkboxEl);
+        // completed.appendChild(task_content_el);
+        // completed.appendChild(task_input_el);
+        // completed.appendChild(task_actions_el);
+        // completed.appendChild(task_edit_el);
+        // completed.appendChild(task_delete_el);
       } else {
         checkboxEl.classList.remove("fa-square-check");
         checkboxEl.classList.add("fa-square");
         task_input_el.style.textDecoration = "none";
-
+        
 
       }
     });

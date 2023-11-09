@@ -149,7 +149,7 @@ main {
   transition: 0.4s;
 }
 
-.task .content .text:not(:read-only) , .completed .content .text:not(:read-only)  {
+.task .content .text:not(:read-only)  {
   color: var(--pink);
 }
 
