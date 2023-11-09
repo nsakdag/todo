@@ -74,6 +74,8 @@ window.addEventListener("load", () => {
       if (checkboxEl.classList.contains("fa-square")) {
         checkboxEl.classList.remove("fa-square");
         checkboxEl.classList.add("fa-square-check");
+        task_input_el.style.textDecoration = "line-through";
+        task_input_el.style.color = "crimson"
    /*      const newh2 = document.createElement("h2");
         newh2.textContent = "Completed";
         sectionEl.appendChild(newh2);
@@ -89,6 +91,8 @@ window.addEventListener("load", () => {
       } else {
         checkboxEl.classList.remove("fa-square-check");
         checkboxEl.classList.add("fa-square");
+        task_input_el.style.textDecoration = "none";
+
 
       }
     });
