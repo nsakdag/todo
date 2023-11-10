@@ -14,13 +14,10 @@
   font-family: "Fira sans", sans-serif;
 }
 
-#myAudio {
+audio {
   display: none;
 }
 
-#completed{
-  display:  none;
-}
 
 body {
   display: flex;
