@@ -3,7 +3,13 @@ window.addEventListener("load", () => {
   const input = document.querySelector("#new-task-input");
   const list_el = document.querySelector("#tasks");
   const completedEl = document.querySelector(".completed");
+  const AddBtn = document.getElementById("new-task-submit")
   let completedTitle;
+
+  AddBtn.addEventListener('click' , function() {
+    var audio = document.getElementById("checked");
+    audio.play()
+  })
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
