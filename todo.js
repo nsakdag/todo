@@ -3,6 +3,7 @@ window.addEventListener("load", () => {
   const input = document.querySelector("#new-task-input");
   const list_el = document.querySelector("#tasks");
   const completedEl = document.querySelector(".completed");
+  let completedTitle;
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -64,13 +65,12 @@ window.addEventListener("load", () => {
         task_edit_el.innerText = "Edit";
         task_input_el.setAttribute("readonly", "readonly");
       }
-
-      
     });
 
     task_delete_el.addEventListener("click", (e) => {
       list_el.removeChild(task_el);
-     completedEl.removeChild(task_el)
+      completedEl.removeChild(task_el);
+      checkAndRemoveCompletedTitle();
     });
 
     checkboxEl.addEventListener("click", () => {
@@ -79,6 +79,7 @@ window.addEventListener("load", () => {
         checkboxEl.classList.add("fa-square-check");
         task_input_el.style.textDecoration = "line-through";
         const newh2 = document.querySelector(".completed h2");
+
         if (!newh2) {
           const completedTitle = document.createElement("h2");
           completedTitle.textContent = "Completed";
@@ -90,13 +91,28 @@ window.addEventListener("load", () => {
         checkboxEl.classList.add("fa-square");
         task_input_el.style.textDecoration = "none";
         list_el.appendChild(task_el);
+        checkAndRemoveCompletedTitle();
       }
     });
 
-    task_delete_el.addEventListener("click", (e) => {
-      
-     completedEl.removeChild(task_el)
-    });
+  
+    function checkAndRemoveCompletedTitle() {
+      const hasCompletedElements = completedEl.querySelector(".fa-square-check");
+  
+      if (!hasCompletedElements) {
+        newh2.remove();
+      }
+    }
 
+    
+ 
+
+    task_delete_el.addEventListener("click", (e) => {
+      completedEl.removeChild(task_el);
+   
+
+    });
+   
+  
   });
 });
