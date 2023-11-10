@@ -3,13 +3,13 @@ window.addEventListener("load", () => {
   const input = document.querySelector("#new-task-input");
   const list_el = document.querySelector("#tasks");
   const completedEl = document.querySelector(".completed");
-  const AddBtn = document.getElementById("new-task-submit")
+  const AddBtn = document.getElementById("new-task-submit");
   let completedTitle;
 
-  AddBtn.addEventListener('click' , function() {
-    var audio = document.getElementById("checked");
-    audio.play()
-  })
+  AddBtn.addEventListener("click", function () {
+    var audio = document.getElementById("completed");
+    audio.play();
+  });
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -125,8 +125,7 @@ window.addEventListener("load", () => {
         var audio = document.getElementById("myAudio");
       } else if (completedEl.contains(task_el)) {
         var audio = document.getElementById("completed");
-      } 
-      
+      }
 
       audio.play();
     }
