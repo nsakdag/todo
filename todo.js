@@ -64,6 +64,8 @@ window.addEventListener("load", () => {
         task_edit_el.innerText = "Edit";
         task_input_el.setAttribute("readonly", "readonly");
       }
+
+      
     });
 
     task_delete_el.addEventListener("click", (e) => {
