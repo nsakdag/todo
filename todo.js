@@ -15,6 +15,11 @@ window.addEventListener("load", () => {
       return;
     }
 
+    function playAudio() {
+      var audio = document.getElementById("myAudio");
+      audio.play();
+    }
+
     const task_el = document.createElement("div");
     task_el.classList.add("task");
 
@@ -74,6 +79,7 @@ window.addEventListener("load", () => {
     });
 
     checkboxEl.addEventListener("click", () => {
+      playAudio()
       if (checkboxEl.classList.contains("fa-square")) {
         checkboxEl.classList.remove("fa-square");
         checkboxEl.classList.add("fa-square-check");

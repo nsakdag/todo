@@ -14,7 +14,8 @@ window.addEventListener("load", () => {
         alert("Please enter a task!");
         return;
       }
-  
+
+ 
       const task_el = document.createElement("div");
       task_el.classList.add("task");
   
@@ -55,7 +56,21 @@ window.addEventListener("load", () => {
       list_el.appendChild(task_el);
   
       input.value = "";
+      
+      function playAudio() {
+        if (list_el.contains(task_el)) {
+          var audio = document.getElementById("myAudio");
+        }else  {
+          var audio =document.getElementById('completed')
+        }
+       
+        audio.play();
+      }
   
+
+
+
+
       task_edit_el.addEventListener("click", () => {
         if (task_edit_el.innerText.toLowerCase() == "edit") {
           task_edit_el.innerText = "Save";
@@ -81,6 +96,7 @@ window.addEventListener("load", () => {
       });
   
       checkboxEl.addEventListener("click", () => {
+        playAudio()
         if (checkboxEl.classList.contains("fa-square")) {
           checkboxEl.classList.remove("fa-square");
           checkboxEl.classList.add("fa-square-check");
