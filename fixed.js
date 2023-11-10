@@ -5,9 +5,11 @@ window.addEventListener("load", () => {
   const completedEl = document.querySelector(".completed");
   const AddBtn = document.getElementById("new-task-submit");
   let completedTitle;
+  var audio = document.getElementById("checked");
 
   AddBtn.addEventListener("click", function () {
-    var audio = document.getElementById("completed");
+    var audio = document.getElementById("checked");
+
     audio.play();
   });
 
