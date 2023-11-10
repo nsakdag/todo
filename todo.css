@@ -99,9 +99,15 @@ main {
   margin-bottom: 1rem;
 }
 
+.completed h2 {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: var(--grey);
+  margin-bottom: 1rem;
+}
 
 
-#tasks .task  , .completed {
+.task    {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -112,7 +118,7 @@ main {
 }
 
 
-.task .content , .completed {
+.task .content  {
   flex: 1 1 0%;
 }
 
@@ -141,7 +147,7 @@ main {
   transform: scale(1.4);
 }
 
-.task .content .text , .completed .text{
+.task .content .text {
   color: var(--light);
   font-size: 1.125rem;
   width: 100%;
@@ -153,12 +159,12 @@ main {
   color: var(--pink);
 }
 
-.task .actions , .completed .actions {
+.task .actions  {
   display: flex;
   margin: 0 -0.5rem;
 }
 
-.task .actions button , .completed  button{
+.task .actions button{
   cursor: pointer;
   margin: 0 0.5rem;
   font-size: 1.125rem;
@@ -167,20 +173,20 @@ main {
   transition: 0.4s;
 }
 
-.task .actions button:hover , .completed  button:hover {
+.task .actions button:hover  {
   opacity: 0.8;
 }
 
-.task .actions button:active , .completed  button:active{
+.task .actions button:active {
   opacity: 0.6;
 }
 
-.task .actions .edit , .completed  .edit {
+.task .actions .edit {
   background-image: linear-gradient(to right, var(--pink), var(--purple));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.task .actions .delete , .completed  .delete {
+.task .actions .delete  {
   color: crimson;
 }

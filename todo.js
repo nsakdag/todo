@@ -2,7 +2,7 @@ window.addEventListener("load", () => {
   const form = document.querySelector("#new-task-form");
   const input = document.querySelector("#new-task-input");
   const list_el = document.querySelector("#tasks");
-  const sectionEl = document.querySelector(".task-list");
+  const completedEl = document.querySelector(".completed");
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -68,33 +68,33 @@ window.addEventListener("load", () => {
 
     task_delete_el.addEventListener("click", (e) => {
       list_el.removeChild(task_el);
+     completedEl.removeChild(task_el)
     });
 
-    checkboxEl.addEventListener("click", function () {
+    checkboxEl.addEventListener("click", () => {
       if (checkboxEl.classList.contains("fa-square")) {
         checkboxEl.classList.remove("fa-square");
         checkboxEl.classList.add("fa-square-check");
         task_input_el.style.textDecoration = "line-through";
-        
-        // const newh2 = document.createElement("h2");
-        // newh2.textContent = "Completed";
-        // sectionEl.appendChild(newh2);
-        // const completed = document.createElement("div");
-        // completed.classList.add("completed");
-        // sectionEl.appendChild(completed);
-        // completed.appendChild(checkboxEl);
-        // completed.appendChild(task_content_el);
-        // completed.appendChild(task_input_el);
-        // completed.appendChild(task_actions_el);
-        // completed.appendChild(task_edit_el);
-        // completed.appendChild(task_delete_el);
+        const newh2 = document.querySelector(".completed h2");
+        if (!newh2) {
+          const completedTitle = document.createElement("h2");
+          completedTitle.textContent = "Completed";
+          completedEl.appendChild(completedTitle);
+        }
+        completedEl.appendChild(task_el);
       } else {
         checkboxEl.classList.remove("fa-square-check");
         checkboxEl.classList.add("fa-square");
         task_input_el.style.textDecoration = "none";
-        
-
+        list_el.appendChild(task_el);
       }
     });
+
+    task_delete_el.addEventListener("click", (e) => {
+      
+     completedEl.removeChild(task_el)
+    });
+
   });
 });
